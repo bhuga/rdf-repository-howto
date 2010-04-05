@@ -52,15 +52,16 @@
     
     
           ## These are simple helpers to serialize and unserialize component
-          # fields.  We use an explicit 'nil' string for null values for clarity in
+          # fields.  We use an explicit empty string for null values for clarity in
           # this example; we cannot use NULL, as SQLite considers NULLs as
           # distinct from each other when using the uniqueness constraint we
-          # added when we created the table.
+          # added when we created the table.  It would let us insert duplicate
+          # with a NULL context.
           def serialize(value)
-            value.nil? ? 'nil' : RDF::NTriples::Writer.serialize(value)
+            RDF::NTriples::Writer.serialize(value) || ''
           end
           def unserialize(value)
-            value == 'nil' ? nil : RDF::NTriples::Reader.unserialize(value)
+            value == '' ? nil : RDF::NTriples::Reader.unserialize(value)
           end
     
           ## These are simple helpers for DataObjects
