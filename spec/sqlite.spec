@@ -1,5 +1,4 @@
     $:.unshift File.dirname(__FILE__) + "/../lib/"
-    $:.unshift File.dirname(__FILE__) + "/../../rdf-spec/lib/"
 
     require 'rdf'
     require 'rdf/do'
@@ -10,7 +9,7 @@
     describe RDF::DataObjects::Repository do
       context "The SQLite adapter" do
         before :each do
-          @repository = RDF::DataObjects::Repository.new "sqlite3://:memory:"
+          @repository = RDF::DataObjects::Repository.new "sqlite3::memory:"
         end
    
         after :each do
