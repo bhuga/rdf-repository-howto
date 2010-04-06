@@ -2,7 +2,7 @@
 
 
 This is a quick repository to provide an easy checkout for the code in the blog
-entry at <http://blog.datagraph.org/2010/04/rdf-sql-howto>.  The blog entry is
+entry at <http://blog.datagraph.org/2010/04/rdf-repository-howto>.  The blog entry is
 hopefully more than enough README.
 
 
